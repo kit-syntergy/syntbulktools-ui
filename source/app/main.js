@@ -68,12 +68,12 @@
              ***************************************************************/
             if (!Object.hasOwnProperty('create')) {
                 Object.create = function (parentObj) {
-                    function tmpObj() {
+                    function TmpObj() {
                     }
 
-                    tmpObj.prototype = parentObj;
-                    tmpObj.prototype.$super = parentObj;
-                    return new tmpObj();
+                    TmpObj.prototype = parentObj;
+                    TmpObj.prototype.$super = parentObj;
+                    return new TmpObj();
                 };
             }
             if (!Object.hasOwnProperty('defineProperties')) {

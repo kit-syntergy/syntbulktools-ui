@@ -401,7 +401,7 @@ define(["AbstractDataTableController", "async", "scroller", "jeditable", "tablet
             };
 
             controller.showSuccessNode = function (id, path, text) {
-                var html = '<span style="color: green; font-weight: bold">' + text + '</span>'
+                var html = '<span style="color: green; font-weight: bold">' + text + '</span>';
                 this.statusColVals[id] = html;
                 if (id >= controller.startNo && id <= controller.endNo) {
                     this.dataTable.fnUpdate(html, id - 1, 1, false, false);
@@ -416,7 +416,7 @@ define(["AbstractDataTableController", "async", "scroller", "jeditable", "tablet
             };
 
             controller.showErrorNode = function (id, path, errMsg) {
-                var html = '<span style="color: red; font-weight: bold" title="' + errMsg + '">Error</span>'
+                var html = '<span style="color: red; font-weight: bold" title="' + errMsg + '">Error</span>';
                 this.statusColVals[id] = html;
                 if (id >= controller.startNo && id <= controller.endNo) {
                     this.dataTable.fnUpdate(html, id - 1, 1, false, false);

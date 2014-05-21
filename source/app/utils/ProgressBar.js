@@ -74,7 +74,7 @@ define(["jquery", "lodash", "popup"],
                     show: function (backdrop) {
                         backdrop = typeof backdrop == "undefined" ? false : backdrop;
                         var msg = 'Estimated time is <span id="secondsSpan">' + clockSeconds + '</span> seconds.<br><br>';
-                        msg += '<div id="mybar" class="progress-img" style="width: 100%; text-align: middle"></div>';
+                        msg += '<div id="mybar" class="progress-img" style="width: 100%; text-align: center"></div>';
                         popup._dialog(msg,
                             title || "Processing",
                             false,
@@ -98,7 +98,7 @@ define(["jquery", "lodash", "popup"],
                     title: title,
                     show: function (backdrop) {
                         backdrop = typeof backdrop == "undefined" ? false : backdrop;
-                        var msg = '<div id="mybar" class="progress-img" style="width: 100%; text-align: middle"></div>';
+                        var msg = '<div id="mybar" class="progress-img" style="width: 100%; text-align: center"></div>';
                         popup._dialog(msg,
                             title || "Processing",
                             false,

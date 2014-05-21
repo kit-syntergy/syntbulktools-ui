@@ -172,12 +172,6 @@ define(['bootbox', 'StopWatch', 'lodash', 'text!templates/form_modal.html', "com
             forwardToPage: function (module, page, formVals, triggerChanges) {
                 App.Router.switchPage(module, page, formVals, true, triggerChanges);
             },
-            ensureDirSeparator: function (path) {
-                if (path.substring(path.length - 1) != "\\") {
-                    path += "\\"
-                }
-                return path;
-            },
             isCsvPath: function (path) {
                 return path.substring(path.length - 3).toUpperCase() == "CSV"
             },
@@ -195,15 +189,6 @@ define(['bootbox', 'StopWatch', 'lodash', 'text!templates/form_modal.html', "com
                     s += $("#schedule_form").length ? "&" + $("#schedule_form").serialize() : '';
                 }
                 return s;
-            },
-            serializeFormValsArray: function () {
-                var arr1 = $("#myform").serializeArray();
-                var arr2 = $("#myform_adv").serializeArray();
-                var u = _.union(arr1, arr2);
-                if ($("#formModal").length) {
-                    u = _.union(u, $("#formModal").serializeArray());
-                }
-                return u;
             },
             enableElement: function (id) {
                 $("#" + id).prop('disabled', false);
@@ -229,12 +214,6 @@ define(['bootbox', 'StopWatch', 'lodash', 'text!templates/form_modal.html', "com
             disableActionButtons: function () {
                 $("button.btn-now").prop('disabled', true);
             },
-            activatePrimaryButton: function (ids) {
-                $("button.btn-now").removeClass("btn-primary");
-                _.each(ids, function (id) {
-                    $("#" + id).addClass("btn-primary");
-                });
-            },
             reloadGrid: function () {
 
             },
@@ -244,9 +223,6 @@ define(['bootbox', 'StopWatch', 'lodash', 'text!templates/form_modal.html', "com
             },
             showError: function (msg) {
                 popup._alert(msg, "alert-error");
-            },
-            showWarning: function (msg) {
-                popup._alert(msg, "alert-warning");
             },
             showInfo: function (msg, autoClose) {
                 popup._alert(msg, "alert-info", autoClose);
@@ -281,13 +257,13 @@ define(['bootbox', 'StopWatch', 'lodash', 'text!templates/form_modal.html', "com
                     var scheduleId = id.substr(id.indexOf("_") + 1);
                     $("#" + id).click(function (e) {
                         var el = $("#jobstatus_" + scheduleId);
-                        el.html('<div id="mybar" class="progress-img" style="width: 50%; text-align: middle"></div>')
+                        el.html('<div id="mybar" class="progress-img" style="width: 50%; text-align: center"></div>');
                         $.when(App.ServerAPI.getJobStatusHtml(scheduleId))
                             .done(function (result) {
                                 el.html(result);
                             })
                             .fail(function (errMsg, context) {
-                                log(errMsg)
+                                log(errMsg);
                                 el.html('');
                             });
                     });
@@ -340,34 +316,6 @@ define(['bootbox', 'StopWatch', 'lodash', 'text!templates/form_modal.html', "com
                 $('#' + rootDivId).html(msg);
                 $('.modal-header').html(title);
             },
-            updatePopupWindow: function (rootDivId, msg, title, height, width) {
-                $(".bootbox").css("height", height);
-                $(".bootbox").css("width", width);
-                $('#' + rootDivId).html(msg);
-                $('.modal-header').html(title);
-            },
-            hideAlerts: function () {
-                popup._hideAlerts();
-            },
-            openModalForm: function (formName, title, pageTemplate, height, width, saveCallback, closeCallback) {
-                var baseTemplate = Handlebars.compile(modalFormTemplate);
-                Handlebars.registerPartial("page_content1", pageTemplate);
-                var html = baseTemplate({form_id: formName, form_name: formName});
-                var buttons = {
-                    save: {
-                        label: "Save",
-                        className: "btn-primary",
-                        callback: saveCallback
-                    },
-                    cancel: {
-                        label: "Cancel",
-                        className: "btn",
-                        callback: closeCallback
-                    }
-                };
-                this.openModalWindow(html, title, true, "modal_form", buttons, height, width);
-            },
-
             canEnableActionButtons: function () {
                 return false;
             },
@@ -440,22 +388,6 @@ define(['bootbox', 'StopWatch', 'lodash', 'text!templates/form_modal.html', "com
             },
             ProgressBar: function (title, total) {
                 return new ProgressBar(title, total);
-            },
-            setEnd_date: function (val) {
-                val = new Date(val);
-                val = App.JobScheduleController.getDateStrFromDate(val);
-                $('#end_date').val(val);
-            },
-            setStart_date: function (val) {
-                val = new Date(val);
-                val = App.JobScheduleController.getDateStrFromDate(val);
-                $('#start_date').val(val);
-            },
-            setOne_time_date: function (val) {
-                val = new Date(val);
-                val = App.JobScheduleController.getDateStrFromDate(val);
-                $('#one_time_date').val(val);
-            }
-        };
+            }};
     });
 

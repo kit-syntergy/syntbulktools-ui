@@ -5,9 +5,8 @@ define([
     "OScriptParser",
     "FileController",
     "lodash",
-    "ContentServerAPI",
-    "ErrorController"
-], function (router, $, OScriptParser, FileController, _, ContentServerAPI, ErrorController, JobScheduleController) {
+    "ContentServerAPI"
+], function (router, $, OScriptParser, FileController, _, ContentServerAPI, JobScheduleController) {
     /*global App*/
     /*global LL_URL*/
     return {
@@ -16,7 +15,6 @@ define([
         Router: router,
         OScriptParser: OScriptParser,
         ServerAPI: ContentServerAPI,
-        ErrorController: ErrorController,
         ArrayUtils: function(arr){
             return {
                 hasIt : false,
@@ -35,14 +33,5 @@ define([
                     return this.hasIt;
                 }
             }
-        },
-        inheritFrom: function(o, parent, override){
-            for (var key in parent) {
-              if (parent.hasOwnProperty(key) && (!o.hasOwnProperty(key) || override)) {
-                  o[key] = parent[key];
-
-              }
-            }
-        }
-    };
+        }};
 });

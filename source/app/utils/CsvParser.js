@@ -39,13 +39,6 @@ define(["jquery", "lodash"],
 
                     return out;
                 },
-                newBlankLine: function (length) {
-                    var newLine = "";
-                    for (var i = 0; i < length; i++) {
-                        newLine += ',';
-                    }
-                    return newLine;
-                },
                 textToCSV: function (text, limit) {
                     var rawLines = text.split(this.linedelim);
                     var data = [];

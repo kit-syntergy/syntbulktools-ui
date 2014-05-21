@@ -5,7 +5,7 @@ define(["ProcessController"],
             var controller = Object.create(ProcessController);
 
             controller.exportSuccess = function (result) {
-                msg = result["msg"] || "Export completed successfully."
+                var msg = result["msg"] || "Export completed successfully.";
                 App.PageController.showSuccess(msg);
                 App.PageController.setRootExportPath(App.PageController.rootExportDir, false);
             };

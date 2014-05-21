@@ -32,8 +32,7 @@ function StopWatch() {
             ms = (getTime() - startTime);
         else
             ms = (stopTime - startTime);
-        var seconds = ms / 1000;
-        return seconds
+        return ms / 1000
     };
 
     this.getDurationStr = function () {
@@ -48,10 +47,6 @@ function StopWatch() {
         else {
             return seconds + " seconds";
         }
-    };
-
-    this.isRunning = function () {
-        return running;
     };
 
     function getTime(){

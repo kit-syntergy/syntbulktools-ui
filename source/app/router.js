@@ -2,7 +2,6 @@ define(["jquery",
     "handlebars",
     "DataTableCsvController",
     "DataTableCrudController",
-    "ErrorController",
     "FileController",
     "FaqPage",
     "HelpPage",
@@ -28,7 +27,7 @@ define(["jquery",
     "ProfileController",
     "JobScheduleController"
 ],
-    function ($, Handlebars, DataTableCsvController, DataTableCrudController, ErrorController, FileController, FaqPage, HelpPage, BL_ManageLoadPathsPage, BL_ManageLoadJobsPage, BL_ManagePrivilegesPage, BL_LoadFromFolderStructurePage, BL_LoadFromCsvPage, BL_LoadUsersPage, BL_SettingsPage, BL_LoadValidateController, BE_ManageExportPathsPage, BE_ManageExportJobsPage, BE_ManagePrivilegesPage, BE_ExportObjectsPage, BE_ExportMetadataPage, BE_ExportUsersPage, BE_SettingsPage, BE_ExportController, TreeController, BL_ManageLoadProfilesPage, BE_ManageExportProfilesPage, ProfileController, JobScheduleController) {
+    function ($, Handlebars, DataTableCsvController, DataTableCrudController, FileController, FaqPage, HelpPage, BL_ManageLoadPathsPage, BL_ManageLoadJobsPage, BL_ManagePrivilegesPage, BL_LoadFromFolderStructurePage, BL_LoadFromCsvPage, BL_LoadUsersPage, BL_SettingsPage, BL_LoadValidateController, BE_ManageExportPathsPage, BE_ManageExportJobsPage, BE_ManagePrivilegesPage, BE_ExportObjectsPage, BE_ExportMetadataPage, BE_ExportUsersPage, BE_SettingsPage, BE_ExportController, TreeController, BL_ManageLoadProfilesPage, BE_ManageExportProfilesPage, ProfileController, JobScheduleController) {
         return {
             /*global App */
             switchPage: function (moduleName, pageName, formVals, updateAddress, triggerChanges) {

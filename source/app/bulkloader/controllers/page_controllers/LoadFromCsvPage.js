@@ -41,8 +41,8 @@ define(["CsvPageController"],
                 });
 
                 require(["customfile"], function (customfile) {
-                    if (this.customFile == null) {
-                        this.customFile = $('input[type=file]').customFile();
+                    if (controller.customFile == null) {
+                        controller.customFile = $('input[type=file]').customFile();
                     }
                 });
 
