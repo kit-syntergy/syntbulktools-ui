@@ -1,0 +1,15 @@
+<div class="row-fluid">
+    <div class="span12 form-container">
+        <form class="form-horizontal" id="myform" name="myform">
+            {{> page_content1}}
+            <div class="control-group" id="action_buttons_div">
+                <!--label class="control-label" for="action_controls">Action:</label-->
+                <div class="controls" id="action_controls">
+                    {{#each action_buttons}}
+                    <button id="{{id}}" class="{{className}}">{{label}}</button>
+                    {{/each}}
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

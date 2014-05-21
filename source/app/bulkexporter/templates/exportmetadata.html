@@ -1,0 +1,50 @@
+<input type="hidden" name="jobType" id="jobType" value="export">
+<input type="hidden" name="jobSubtype" id="jobSubtype" value="exportmetadata">
+<input type="hidden" name="exportType" value="flat">
+<input type="hidden" name="numMetadataFiles" value="single">
+<input type="hidden" id="metadataOnly" name="metadataOnly" value="true">
+<input type="hidden" name="rootSourceId" id="rootSourceId">
+<input type="hidden" name="action" id="action" value="exportnodes">
+
+<div class="control-group" id="sourcePathControlGroup">
+    <label class="control-label label-required" for="rootSourcePath">Source Node:</label>
+
+    <div class="controls">
+        <div class="input-append">
+            <input class="input-xlarge" name="rootSourcePath" id="rootSourcePath" type="text" required>
+            <button class="btn" type="button" id="selectSourcePathButton">Select
+            </button>
+        </div>
+        <label for="includeRoot" class="checkbox" style="display: block;">Include Root<span class="help-inline"
+                                                                                                style="font-size: x-small">(Leave unchecked to export only the contents of this node)</span>
+            <input type="checkbox" name="includeRoot" id="includeRoot" value="true">
+        </label>
+    </div>
+
+</div>
+
+<div class="control-group" id="rootExportPathControlGroup">
+    <label class="control-label label-required" for="rootExportPath">Root Export Path</label>
+
+    <div class="controls">
+        <div class="input-append">
+            <input class="input-xlarge" name="rootExportPath" id="rootExportPath" type="text" readonly="readonly"
+                   required>
+            <button class="btn" type="button" id="selectExportPathButton">Select</button>
+        </div>
+    </div>
+</div>
+
+<div id="subTargetPathControlGroup" class="be_objects be_metadata">
+    <label class="control-label" for="subTargetPath">Sub folder name</label>
+
+    <div class="controls">
+        <input class="span6" name="subTargetPath" id="subTargetPath" type="text">
+        <span class="help-block" style="font-size: x-small">Optional. Otherwise, a uniquely named folder will be created under the root export path.</span>
+    </div>
+</div>
+
+
+
+
+

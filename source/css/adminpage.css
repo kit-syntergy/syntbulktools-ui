@@ -1,0 +1,103 @@
+.settings div {
+	margin:0;
+	padding:0;
+}
+.box-shadow {
+	-moz-box-shadow: 0 1px 6px 0px #ccc;
+	-webkit-box-shadow: 0 1px 6px 0px #ccc;
+	box-shadow:0 1px 6px #ccc;
+	zoom: 1;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#cccccc,direction=180,strength=3);
+}
+body:last-child .box-shadow {
+	/* Remove filter from IE9 */
+	filter: none;
+}
+.settings { 
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table.prop-group {
+	margin:0;
+	padding:0;
+    width: 100%;
+}
+
+.settings input, .settings select {
+	margin:1px 2px 1px 0;
+	height:19px;
+	line-height:16px;
+    font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+    vertical-align:middle;
+    box-sizing:border-box;
+}
+
+div.setting-group {
+	margin-top:5px;
+	margin-bottom:15px;
+	border:1px solid #a0a0a0;
+	border-radius:4px;
+    padding:2px;
+    background:white;
+	width:1080px;
+}
+
+div.section-label {
+	font-family:Tahoma,Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	line-height:22px;
+	height:22px;
+	vertical-align:middle;
+	text-align:left;
+	padding-left:5px;
+	margin:0px;
+    background: #cae1eb;
+    border-radius:3px;
+}
+
+input[data-prefix] {
+	cursor:pointer;
+}
+
+.setting-label {
+	padding-left:10px;
+	line-height:18px;
+	vertical-align:top;
+	height:20px;
+}
+
+.setting-value {
+	vertical-align:top;
+}
+div.instructions {
+    padding:3px 8px;
+	border: 1px solid #ffe67a;
+    background-color: #ffffcc;
+    width:250px;
+    color:black;
+    line-height:20px;
+	margin-bottom:5px;
+    margin-right:15px;
+}
+.radiodiv {
+	margin-top:3px;
+	margin-bottom:3px;
+    line-height:19px;
+    vertical-align:middle;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px white inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: #333;
+    border:1px solid #a0a0a0;
+    padding:1px;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 2,0 0 0 50px white inset;
+    -webkit-text-fill-color: #333;
+    border:1px solid #a0a0a0;
+    padding:1px;
+}

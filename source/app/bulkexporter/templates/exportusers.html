@@ -1,0 +1,70 @@
+<input type="hidden" name="jobType" id="jobType" value="export">
+<input type="hidden" name="jobSubtype" id="jobSubtype" value="exportusers">
+<input type="hidden" name="exportType" value="flat">
+<input type="hidden" name="numMetadataFiles" value="single">
+<input type="hidden" id="metadataOnly" name="metadataOnly" value="true">
+<input type="hidden" name="rootSourceId" id="rootSourceId">
+<input type="hidden" name="numSubLevels" id="numSubLevels" value="All">
+<input type="hidden" name="includeMembership" id="includeMembership" value="true">
+<input type="hidden" name="action" id="action" value="exportusers">
+
+<div class="control-group" id="sourcePathControlGroup">
+    <label class="control-label label-required" for="rootSourcePath">Root Group</label>
+
+    <div class="controls">
+        <div class="input-append">
+            <input class="input-xlarge" name="rootSourcePath" id="rootSourcePath" type="text" required>
+            <button class="btn" type="button" id="selectSourcePathButton">Select
+            </button>
+        </div>
+        <label for="includeRoot" class="checkbox" style="display: block;">Include Root<span class="help-inline"
+                                                                                                style="font-size: x-small">(Leave unchecked to export only the users within this group)</span>
+            <input type="checkbox" name="includeRoot" id="includeRoot" value="true">
+        </label>
+    </div>
+
+</div>
+
+<div class="control-group" id="rootExportPathControlGroup">
+    <label class="control-label label-required" for="rootExportPath">Root Export Path</label>
+
+    <div class="controls">
+        <div class="input-append">
+            <input class="input-xlarge" name="rootExportPath" id="rootExportPath" type="text" readonly="readonly"
+                   required>
+            <button class="btn" type="button" id="selectExportPathButton">Select</button>
+        </div>
+    </div>
+</div>
+
+<div id="subTargetPathControlGroup" class="be_objects be_metadata">
+    <label class="control-label" for="subTargetPath">Sub folder name</label>
+
+    <div class="controls">
+        <input class="span6" name="subTargetPath" id="subTargetPath" type="text">
+        <span class="help-block" style="font-size: x-small">Optional. Otherwise, a uniquely named folder will be created under the root export path.</span>
+    </div>
+</div>
+
+<!--input name="subTargetPath" id="subTargetPath" type="hidden"-->
+
+<div class="control-group" id="includeUsersControlGroup">
+    <label class="control-label" for="includeGroups">Options</label>
+
+    <div class="controls">
+        <label for="includeGroups" class="checkbox includeUgLabel" style="vertical-align: bottom">
+            <input class="includeCheckbox" type="checkbox" name="includeGroups" id="includeGroups" value="true" checked>Include Groups
+        </label>
+        <label for="includeUsers" class="checkbox includeUgLabel" style="vertical-align: bottom">
+            <input class="includeCheckbox" type="checkbox" name="includeUsers" id="includeUsers" value="true" checked>Include Users
+        </label>
+    </div>
+</div>
+
+
+
+
+
+
+
+

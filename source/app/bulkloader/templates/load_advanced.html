@@ -1,0 +1,88 @@
+<div id="advancedDiv" class="right-side-accordion">
+    <h6>Advanced Settings</h6>
+
+    <div class="advanced_settings">
+        <label class="checkbox bl_structure bl_create bl_addversion" for="defaultFileExtension">Default File Extension
+            <input type="text" class="input-small" id="defaultFileExtension" name="defaultFileExtension" value="pdf"/>
+            <span class="help-block">Default file type extension for files having no file type extension (e.g. doc, pdf, tif).</span>
+        </label>
+
+        <label class="checkbox bl_structure bl_create bl_move bl_addversion bl_update bl_rename bl_updateperms" for="auditFolderPath">Error Folder Path
+            <input type="text" class="input-medium" id="auditFolderPath" name="auditFolderPath" value=""/>
+            <span class="help-block">Create csv audit files to this folder path. If the path is Invalid or blank, errors will be logged to a folder called "_audit" sub-folder beneath the load directory.</span>
+        </label>
+
+        <label for="requireMetadata" class="checkbox bl_structure">Require Metadata CSV Entry
+            <input type="checkbox" name="requireMetadata" id="requireMetadata" value="true" checked>
+            <span class="help-block">Require a CSV metadata entry for each file and folder.</span>
+        </label>
+
+        <label for="inheritParent" class="checkbox bl_structure bl_create">Inherit Parent Attributes
+            <input type="checkbox" name="inheritParent" id="inheritParent" value="true">
+            <span class="help-block">Inherit category and record management data from parent container for each item.</span>
+        </label>
+
+        <label for="autoCreateFolders" class="checkbox bl_create bl_addversion bl_move">Auto Create Folders from $TargetPath
+            <input type="checkbox" name="autoCreateFolders" id="autoCreateFolders" value="true" checked>
+            <span class="help-block">Create folders as required when elements in $TargetPath do not exist.</span>
+        </label>
+
+        <!-- TODO:  Add support for this label for="autoCreateCD" class="checkbox bl_create bl_addversion">Auto Create Compound Documents
+            <input type="checkbox" name="autoCreateCD" id="autoCreateCD" value="true">
+            <span class="help-block">Create compound documents as required when elements with ".CD" suffix in $TargetPath do not exist.</span>
+        </label-->
+
+        <label for="useFileCreateDate" class="checkbox bl_structure bl_create">Use file's create date
+            <input type="checkbox" name="useFileCreateDate" id="useFileCreateDate" value="true">
+            <span class="help-block">Use file's create date as the create and modified date when creating documents</span>
+        </label>
+
+        <label for="useFileModifyDate" class="checkbox bl_structure bl_create">Use file's modified date
+            <input type="checkbox" name="useFileModifyDate" id="useFileModifyDate" value="true">
+            <span class="help-block">Use file's last modified date as the create and modified date when creating documents</span>
+        </label>
+
+        <label class="radio bl_create bl_addversion">
+            <input type="radio" name="sourcePathType" id="sourcePathIsFile"
+                   value="file" checked>
+            $SourcePath refers to the file's location
+            <span class="help-block">Example: $SourcePath="Docs/MyFolder/mydoc.doc."  $FileName value will be ignored.</span>
+        </label>
+        <label class="radio bl_create bl_addversion">
+            <input type="radio" name="sourcePathType" id="sourcePathIsParent"
+                   value="parent">
+            $SourcePath refers to the parent's location
+            <span class="help-block">Example: $SourcePath= "Docs/MyFolder/" and "$FileName"= "mydoc.doc."  $FileName is required.</span>
+        </label>
+        <label class="radio bl_create bl_addversion bl_move bl_updateperms bl_update bl_rename">
+            <input type="radio" name="targetPathType" id="targetPathIsObject"
+                   value="object" checked>
+            $TargetPath refers to the object's location
+            <span class="help-block">Example: A $TargetPath of ":Enterprise:MyFolder" will create or update the "MyFolder" object.  $ObjectName value will be ignored.</span>
+        </label>
+        <label class="radio bl_create bl_addversion bl_move bl_updateperms bl_update bl_rename">
+            <input type="radio" name="targetPathType" id="targetPathIsParent"
+                   value="parent">
+            $TargetPath refers to the parent's location
+            <span class="help-block">Example: A $TargetPath of ":Enterprise:MyFolder" and $ObjectName of "Docs" will create or update the "Docs" object.  $ObjectName is required.</span>
+        </label>
+
+        <label for="rmClassInherit" class="checkbox bl_move">Inherit RM Classification for moved objects
+            <input type="checkbox" name="rmClassInherit" id="rmClassInherit" value="true">
+            <span class="help-block">Inherit the Target Folder's RM Classification for each moved object</span>
+        </label>
+
+        <label for="forcePermInherit" class="checkbox bl_move">Force Permission Inheritance for moved objects
+            <input type="checkbox" name="forcePermInherit" id="forcePermInherit" value="true">
+            <span class="help-block">Inherit the Target Folder's Permission for each moved object. Leave unchecked if you don't want permissions to change.</span>
+        </label>
+
+        <label class="bl_move">Attribute source for moved objects
+            <select name="attrSourceType" id="attrSourceType">
+                <option value="1">Destination Node</option>
+                <option value="0">Source Node</option>
+                <option value="2">Merged</option>
+            </select>
+        </label>
+    </div>
+</div>

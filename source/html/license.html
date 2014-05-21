@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+;String		nextUrl
+;String		thisfunc = Web.Escape( .Url() + "?func=syntbt.license" )
+;Date		now = Date.Now()
+;String		supportDir = .Module().SupportPrefix()
+;String		htmlPrefix = .HTMLPrefix()
+;String		urlPrefix = .URL()
+;String		imgPrefix = .Module().SupportPrefix()
+;Dynamic	results
+
+<html>
+<head>
+<TITLE>Syntergy Bulk Tools License</TITLE>
+
+;if IsFeature(this, 'Styles') && Type(this.Styles) == ScriptType
+    `%L.Styles()`
+;end
+
+<script language='javascript'>
+	// fix a problem introduced by otutilities.js
+	if( ( {} ).addProperty ) { 
+		delete Object.prototype.addProperty;
+	}
+</script>
+
+<link rel="stylesheet" href="`supportDir`css/adminpage.css">
+<script src="`supportDir`js/libs/jquery/jquery-1.9.1.js"></script>
+<script language='javascript'>
+	$j = jQuery;
+</script>
+<script src="`supportDir`js/libs/underscore/underscore.js"></script>
+<script language="javascript">
+
+</script>
+<body onload="onLoadFunctionMenu( '`.Img()`actions.gif', '`.Img()`menuwait.gif' );onLoadFunction()">
+
+<!-- File: license.html -->
+<!-- RequestHandler: syntbt.license -->
+
+;String WebAdminObjPrefix = $Kernel.ModuleSubsystem.GetItem("WebAdmin").HTMLPrefix()
+;;call <WebAdminObjPrefix + 'masthead.html'>( 'Syntergy Bulk Tools License' )
+<script language='javascript'>
+	// fix a problem introduced by otutilities.js
+	if( ( {} ).addProperty ) { 
+		delete Object.prototype.addProperty;
+	}
+</script>
+
+<form name="localoptions"  action="`urlPrefix`" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="nexturl" value="`thisfunc`">
+	<input type="hidden" name="func" value="syntbt.license">
+        <input type="hidden" name="update" value="true">
+
+	<div class='settings'>
+
+	<div class='setting-group box-shadow' >
+		<div class='section-label'>License</div>
+		<table class='prop-group'>
+        <tbody>
+		<tr>
+			<td class='setting-label'>License Mode:</td>
+			<td class='setting-value'>`$SyntBulkTools.License.GetLicenseMode()`</td>
+		</tr>
+        ;if $SyntBulkTools.License.HasLicense()
+
+            <tr>
+                <td class='setting-label'>Current License Key:</td>
+                <td class='setting-value' style="overflow-wrap:break-word; font-size:6pt">`$SyntBulkTools.License.GetLicenseKey()`</td>
+            </tr>
+            <tr>
+                <td class='setting-label'>Bulk Loader Enabled:</td>
+                <td class='setting-value'>`$SyntBulkTools.License.AllowBulkLoader()`</td>
+            </tr>
+            <tr>
+                <td class='setting-label'>Bulk Exporter Enabled:</td>
+                <td class='setting-value'>`$SyntBulkTools.License.AllowBulkExporter()`</td>
+            </tr>
+            <tr>
+                <td class='setting-label'>License Expires</td>
+                <td class='setting-value'>`$SyntBulkTools.License.GetExpireDate()`</td>
+            </tr>
+            <tr>
+                <td class='setting-label'>Change License Key:</td>
+                <td class='setting-value'>
+                    <input type='text' name="licensekey" style='width:100%;' VALUE="" />
+                </td>
+            </tr>
+        ;elseif $SyntBulkTools.License.IsEval()
+            <tr>
+                <td class='setting-label'>Evaluation Expires</td>
+                <td class='setting-value'>`$SyntBulkTools.License.GetExpireDate()`</td>
+            </tr>
+            <tr>
+                <td class='setting-label'>Limits</td>
+                <td class='setting-value'>`Str.Format("Exports and Loads up to %1 objects allowed.", $SyntBulkTools.License.GetEvalLimit())`</td>
+            </tr>
+
+		<tr>
+			<td class='setting-label'>License Key:</td>
+			<td class='setting-value'><INPUT type='text' NAME="licensekey" SIZE="150" VALUE=""></td>
+		</tr>
+		<tr>
+			<td class='setting-label'></td>
+			<td class='setting-value'>Contact Your Syntergy Reprentative or email support@syntergy.com to purchase a License Key.</td>
+		</tr>
+        ;end
+	</tbody>
+        </table>
+	</div>
+	</div>
+	<div style='clear:both;padding-top:5px;margin-left:720px'>
+		<INPUT TYPE="SUBMIT" VALUE="Save New License"><INPUT TYPE="BUTTON" VALUE="Cancel" onClick="location.href='`.url()`?func=admin.index'">
+	</div>
+</form>
+;;call <WebAdminObjPrefix + "adminfoot.html">
+</body>
+</html>

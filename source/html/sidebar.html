@@ -1,0 +1,70 @@
+;String modImg = .ModImg();
+;String url = .URL()
+;String modHtmlPrefix = .ModHtmlPrefix()
+;Object allowPkg = $Syntbt.AllowPkg
+;Object	prgCtx = .fPrgCtx
+
+<div class="synt-sidebar">
+    <div class="container-fluid" style="padding-left: 2px;padding-right: 2px">
+        <div class="row-fluid"><a class="nav-header">BULK LOADER</a>
+            <ul id="BULKLOADER" class="nav nav-list">
+		;if allowPkg.IsAllowed(prgCtx, allowPkg.fEVENT_LOAD_SYNC)
+	                <li id="bulkloader-loadfolderstructure"><a href="#bulkloader/loadfolderstructure">Load File Structure</a></li>
+	                <li id="bulkloader-loadcsv"><a href="#bulkloader/loadcsv">Load from CSV</a></li>
+		;end
+		;if allowPkg.IsAllowed(prgCtx, allowPkg.fEVENT_LOAD_USERS)
+	                <li id="bulkloader-loadusers"><a href="#bulkloader/loadusers">Load Users/Groups</a></li>
+		;end
+		;if allowPkg.IsAllowed(prgCtx, allowPkg.fEVENT_LOAD_MNG_PATHS)
+	                <li id="bulkloader-manageloadpaths"><a href="#bulkloader/manageloadpaths">Manage Load Paths</a></li>
+		;end
+		;if allowPkg.IsAllowed(prgCtx, allowPkg.fEVENT_LOAD_MNG_PROF)
+			<li id="bulkloader-manageprofiles"><a href="#bulkloader/manageprofiles">Manage Load Profiles</a></li>
+		;end
+		;if allowPkg.IsAllowed(prgCtx, allowPkg.fEVENT_LOAD_MNG_PRIVS)
+			<li id="bulkloader-manageprivileges"><a href="#bulkloader/manageprivileges">Manage Load Privileges</a></li>
+		;end
+		;if allowPkg.IsAllowed(prgCtx, allowPkg.fEVENT_LOAD_MNG_JOBS)
+	                <li id="bulkloader-manageloadjobs"><a href="#bulkloader/manageloadjobs">Manage Async Load Jobs</a></li>	
+		;end
+                <!-- li id="bulkloader-settings"><a href="#bulkloader/settings">Settings</a></li-->
+                <!-- li id="bulkloader-faq"><a href="#bulkloader/faq">Faq</a></li-->
+                <!-- li id="bulkloader-help"><a href="#bulkloader/help">Help</a></li-->
+            </ul>
+        </div>
+        <div class="row-fluid"><a class="nav-header">BULK EXPORTER</a>
+            <ul id="BULKEXPORTER" class="nav nav-list">
+		;if allowPkg.IsAllowed(prgCtx, allowPkg.fEVENT_EXPORT_SYNC)
+	                <li id="bulkexporter-exportobjects"><a href="#bulkexporter/exportobjects">Export Files and Metadata</a></li>
+	                <li id="bulkexporter-exportmetadata"><a href="#bulkexporter/exportmetadata">Export Metadata Only</a></li>
+		;end
+		;if allowPkg.IsAllowed(prgCtx, allowPkg.fEVENT_EXPORT_USERS)
+	                <li id="bulkexporter-exportusers"><a href="#bulkexporter/exportusers">Export Users/Groups</a></li>
+		;end
+		;if allowPkg.IsAllowed(prgCtx, allowPkg.fEVENT_EXPORT_MNG_PATHS)
+		        <li id="bulkexporter-manageexportpaths"><a href="#bulkexporter/manageexportpaths">Manage Export Paths</a></li>
+		;end
+		;if allowPkg.IsAllowed(prgCtx, allowPkg.fEVENT_EXPORT_MNG_PROF)
+			<li id="bulkexporter-manageprofiles"><a href="#bulkexporter/manageprofiles">Manage Export Profiles</a></li>
+		;end
+		;if allowPkg.IsAllowed(prgCtx, allowPkg.fEVENT_EXPORT_MNG_PRIVS)
+			<li id="bulkexporter-manageprivileges"><a href="#bulkexporter/manageprivileges">Manage Export Privileges</a></li>
+		;end
+		;if allowPkg.IsAllowed(prgCtx, allowPkg.fEVENT_EXPORT_MNG_JOBS)
+	                <li id="bulkexporter-manageexportjobs"><a href="#bulkexporter/manageexportjobs">Manage Async Export Jobs</a></li>
+		;end
+                <!-- id="bulkexporter-settings"><a href="#bulkexporter/settings">Settings</a></li-->
+                <!-- id="bulkexporter-faq"><a href="#bulkexporter/faq">Faq</a></li-->
+                <!-- id="bulkexporter-help"><a href="#bulkexporter/help">Help</a></li-->
+            </ul>
+        </div>
+        <div class="row-fluid"><a class="nav-header">CONTENT SERVER</a>
+            <ul id="CONTENTSERVER" class="nav nav-list">
+		;if .fPrgCtx.fDbConnect.HasSysAdminPerm()
+		        <li><a href="`url`?func=admin.index">Admin Index</a></li>
+		;end
+		<li><a href="`url`" class="content-server">Enterprise Workspace</a></li>
+	    </ul>		
+	</div>
+    </div>
+</div>

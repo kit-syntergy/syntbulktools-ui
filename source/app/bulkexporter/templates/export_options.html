@@ -1,0 +1,107 @@
+<div class="control-group" id="dataToExportControlGroup">
+    <label class="control-label">Data To Export</label>
+
+    <div class="controls">
+        <div id="dataToExportDiv">
+            <h6>Select Data To Export</h6>
+
+            <div style="font-size: 10px" id="dataToExportSubDiv">
+                <!-- TODO: label class="checkbox be_objects be_metadata" for="wantFilesOnly">Documents Only
+                    <input type="checkbox" name="wantFilesOnly" id="wantFilesOnly" value="true">
+                </label-->
+
+                <label class="checkbox be_objects be_metadata" for="wantBasicData">Basic Node Metadata
+                    <input type="checkbox" name="wantBasicData" id="wantBasicData" value="true" checked>
+                    <span class="help-inline" style="font-size: xx-small">CreateDate, ModifyDate, CreatedBy, Description, Catalog, Nickname</span>
+                </label>
+
+                <label class="checkbox be_objects be_metadata" for="wantCategoryData">Category Data
+                    <input type="checkbox" name="wantCategoryData" id="wantCategoryData" value="true" checked>
+                </label>
+
+                <label class="checkbox be_objects be_metadata" for="wantRMData">RM Data
+                    <input type="checkbox" name="wantRMData" id="wantRMData" value="true" checked>
+                </label>
+
+                <label class="checkbox be_objects be_metadata" for="wantClassifications">Classifications
+                    <input type="checkbox" name="wantClassifications" id="wantClassifications" value="true" checked>
+                </label>
+
+                <label class="checkbox be_objects be_metadata" for="wantOwner">Owner & Owner Group names
+                    <input type="checkbox" name="wantOwner" id="wantOwner" value="true" checked>
+                    <span class="help-inline" style="font-size: xx-small">For changing ownership</span>
+                </label>
+
+                <label class="checkbox be_objects be_metadata" for="wantPerms">Permissions
+                    <input type="checkbox" name="wantPerms" id="wantPerms" value="true">
+                </label>
+
+                <!--label class="checkbox be_objects be_metadata" for="wantPhysObj">Physical Object Data
+                    <input type="checkbox" name="wantPhysObj" id="wantPhysObj" value="true">
+                </label-->
+                <input type="hidden" name="wantPhysObj" id="wantPhysObj" value="true">
+
+                <label class="checkbox be_objects" for="wantAllVersions">All Versions
+                    <input type="checkbox" name="wantAllVersions" id="wantAllVersions" value="true">
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="control-group" id="optionsControlGroup">
+    <label class="control-label">Export Options</label>
+
+    <div class="controls">
+        <div id="optionsDiv">
+            <h6>Select Options</h6>
+
+            <div style="font-size: 10px" id="optionsSubDiv">
+
+                <div id="flatOrHierarchyGroup" class="be_objects">
+                    <label class="control-label" for="hierarchyRadio">Structure</label>
+
+                    <div class="controls">
+                        <label class="radio" style="vertical-align: bottom">
+                            <input type="radio" name="exportType" id="hierarchyRadio" value="hierarchy" checked>
+                            Hierarchy
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="exportType" id="flatRadio" value="flat">
+                            Flat
+                        </label>
+                    </div>
+                </div>
+
+                <div id="numMetadataFilesGroup" class="be_objects">
+                    <label class="control-label" for="multipleCSVRadio">Metadata Files</label>
+
+                    <div class="controls">
+                        <label class="radio" style="vertical-align: bottom">
+                            <input type="radio" name="numMetadataFiles" id="multipleCSVRadio" value="multiple">
+                            Multiple (in each folder of hierarchy)
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="numMetadataFiles" id="singleCSVRadio" value="single" checked>
+                            Single File at root
+                        </label>
+                    </div>
+                </div>
+
+                <div id="numSubLevelsGroup"  class="be_objects be_metadata">
+                    <label class="control-label" for="allSubLevelsRadio">Sub-Levels</label>
+
+                    <div class="controls">
+                        <label class="radio" style="vertical-align: bottom">
+                            <input type="radio" name="numSubLevels" id="allSubLevelsRadio" value="All" checked>
+                            All Descendants
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="numSubLevels" id="1SubLevelRadio" value="1">Only Direct Children
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

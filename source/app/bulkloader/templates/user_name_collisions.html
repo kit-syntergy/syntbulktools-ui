@@ -1,0 +1,23 @@
+<fieldset id="nameCollisionFieldset">
+    <div class="control-group" id="nameCollisionGroup">
+        <label class="control-label">Name Collisions:</label>
+
+        <div class="controls">
+            <div id="nameCollisonDiv">
+                <h6>Options</h6>
+
+                <div style="font-size: 10px">
+                    <label class="radio">
+                        <input type="radio" name="nameCollisions" id="nameCollisionUpdateOption" value="update" checked>
+                        <label class="inline" style="font-size: 11px" for="nameCollisionUpdateOption">Update existing user/group with metadata
+                            </label>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="nameCollisions" id="nameCollisionErrorOption" value="error">
+                        <label class="inline" style="font-size: 11px" for="nameCollisionErrorOption">Do nothing (Name conflict errors will be reported)</label>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>

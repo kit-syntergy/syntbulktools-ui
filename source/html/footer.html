@@ -1,0 +1,18 @@
+;String modImg = .ModImg();
+;String url = .URL()
+;String modHtmlPrefix = .ModHtmlPrefix()
+
+<div class="synt-footer row-fluid">
+    <div class="span4" style="text-align:left">
+	;if .fPrgCtx.fDbConnect.HasSysAdminPerm()
+	        <a href="`url`?func=admin.index" style="margin-left: 4px;">Admin Index</a>
+	;end
+        <a href="`url`" class="content-server" style="margin-left: 4px;">Enterprise Workspace</a>
+    </div>
+    <div class="span5" style="padding-top:3px;">
+        Copyright ©2013 by www.syntergy.com, Inc. All rights reserved.
+    </div>
+    <div class="span3" style="font-size:xx-small;padding-top:3px;">
+        Syntergy Bulk Tools v 10.5.0 built: Feb. 17, 2013
+    </div>
+</div>

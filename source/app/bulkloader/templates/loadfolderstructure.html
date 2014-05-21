@@ -1,0 +1,40 @@
+<input type="hidden" name="jobType" id="jobType" value="load">
+<input type="hidden" name="jobSubtype" id="jobSubtype" value="loadfolderstructure">
+<input type="hidden" name="action" id="action" value="create">
+<input type="hidden" name="autoCreateFolders" id="autoCreateFolders" value="true">
+<input type="hidden" name="autoCreateCD" id="autoCreateCD" value="true">
+<!--flag some standard stuff so that we can support folder structure load with metadata-->
+<input type="hidden" name="mdDapi" id="mdDapi" value="true">
+<input type="hidden" name="mdCats" id="mdCats" value="true">
+<input type="hidden" name="mdClass" id="mdClass" value="true">
+<input type="hidden" name="mdRm" id="mdRm" value="true">
+<input type="hidden" name="mdPo" id="mdPo" value="true">
+
+<div class="control-group" id="rootSourcePathControlGroup">
+    <label class="control-label label-required" for="rootSourcePath">Server Load Directory</label>
+
+    <div class="controls">
+        <div class="input-append">
+            <input class="span12" name="rootSourcePath" id="rootSourcePath" type="text" readonly="readonly" required>
+            <button class="btn" type="button" id="selectSourcePathButton">Select</button>
+        </div>
+        <br>
+        <label for="includeRoot" class="checkbox" style="display: block;">Include Root<span class="help-inline" style="font-size: x-small">(Leave unchecked to load only the contents of this folder)</span>
+            <input type="checkbox" name="includeRoot" id="includeRoot" value="true">
+        </label>
+    </div>
+</div>
+<div class="control-group" id="rootTargetPathControlGroup">
+    <label class="control-label label-required" for="rootTargetPath">Target Container:</label>
+
+    <div class="controls">
+        <div class="input-append">
+            <input class="span12" name="rootTargetPath" id="rootTargetPath" type="text" required>
+            <button class="btn" type="button" id="selectTargetPathButton">Select
+            </button>
+        </div>
+        <span class="help-block" style="font-size: x-small">Any Target Path in the CSV Files will be ignored. See note at top of page.</span>
+    </div>
+</div>
+
+

@@ -1,0 +1,35 @@
+<div id="advancedDiv" class="right-side-accordion">
+    <h6>Advanced Settings</h6>
+
+    <div class="advanced_settings">
+
+        <label class="checkbox be_objects" for="useObjectIdForFolderName">Name exported folders with unique dataid
+            <input type="checkbox" id="useObjectIdForFolderName" name="useObjectIdForFolderName" value="true"/>
+            <span class="help-block">Folder will show up in filesystem as "35367" instead of "MyFolder."  Use this setting to avoid Windows file path length errors.</span>
+        </label>
+
+        <label class="checkbox be_objects" for="useObjectIdForFileName">Name exported files with unique dataid
+            <input type="checkbox" id="useObjectIdForFileName" name="useObjectIdForFileName" value="true"/>
+            <span class="help-block">File will show up on filesystem as "35368_v1.doc" instead of "MyDocument.doc."  Use this setting to avoid Windows file path length errors.</span>
+        </label>
+
+        <!-- TODO label class="checkbox be_objects" for="documentFilterDate">Limit Documents to those Created since
+            <div class="controls-row">
+                <input type="text" class="input-small" id="documentFilterDate" name="documentFilterDate" />
+                <span class="help-inline">MM-DD-YYYY Leave blank to export all documents.</span>
+            </div>
+        </label-->
+
+        <label class="checkbox be_objects" for="maxNameLength">Maximum Length for Object Names
+            <div class="controls-row">
+                <input type="text" class="input-small" id="maxNameLength" name="maxNameLength" value="9999"/>
+                <span class="help-block">Truncate any file or folder names greater than X characters (not including file extension). Set a high value (e.g. 9999) to avoid any truncation.</span>
+            </div>
+        </label>
+
+    </div>
+</div>
+
+
+
+

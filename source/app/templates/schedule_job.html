@@ -1,0 +1,171 @@
+<div id="scheduleDiv" class="right-side-accordion">
+    <h4>Asynchronous Scheduling</h4>
+
+    <div>
+        <input type="hidden" name="scheduleId" id="scheduleId">
+        <!--<h5 class="form_section">General Info</h5>-->
+        <div class="control-group">
+            <label class="control-label label-required" for="jobname">Job Name</label>
+
+            <div class="controls">
+                <input class="input-large" name="jobname" id="jobname" type="text" required>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label label-required" for="jobdesc">Job Description</label>
+
+            <div class="controls">
+                <input class="input-large" name="jobdesc" id="jobdesc" type="text">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="notify_emails">Email Addresses to Notify upon Completion</label>
+
+            <div class="controls">
+                <textarea name="notify_emails" id="notify_emails" style="height: 100px; width: 200px;"></textarea>
+            </div>
+            <div class="controls">
+            <span class="help-block" style="font-size: x-small">Separate with commas</span>
+                </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="schedule_type">Schedule Type</label>
+
+            <div class="controls controls-row">
+                <select name="schedule_type" id="schedule_type" class="span6">
+                    <option value="1">One time only</option>
+                    <option value="2">Recurring</option>
+                </select>
+            </div>
+        </div>
+
+        <fieldset id="oneTimeFieldset">
+            <div class="control-group">
+                <label class="control-label label-required" for="one_time_date">Run at</label>
+
+                <div class="controls controls-row">
+                    <input class="span6" placeholder="YYYY-MM-DD" type="date" name="one_time_date" id="one_time_date" required>
+                    <input class="span6" placeholder="HH:MM:SS" type="time" name="one_time_time" id="one_time_time" required>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset id="recurringFieldset">
+            <!--<h5 class="form_section">Frequency</h5>-->
+            <hr>
+
+            <div class="control-group">
+                <label class="control-label" for="day_pattern">Daily Pattern</label>
+
+                <div class="controls">
+
+                    <select name="day_pattern" id="day_pattern">
+                        <option value="1">Every X Days</option>
+                        <option value="2">On certain days of week</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group" id="recursEveryGroup">
+                <label class="control-label label-required" for="day_recurrence">Recurs every</label>
+
+                <div class="controls">
+                    <input class="input-mini" name="day_recurrence" id="day_recurrence" type="number" required>
+                    <span id="increment">days</span>
+                </div>
+            </div>
+
+            <div class="control-group" id="certainDaysGroup">
+                <label class="control-label label-required" for="sunday">Days</label>
+
+                <div class="controls">
+                    <label class="checkbox" for="sunday">Sunday
+                        <input type="checkbox" name="sunday" id="sunday" value="true">
+                    </label>
+                    <label class="checkbox" for="sunday">Monday
+                        <input type="checkbox" name="monday" id="monday" value="true">
+                    </label>
+                    <label class="checkbox" for="sunday">Tuesday
+                        <input type="checkbox" name="tuesday" id="tuesday" value="true">
+                    </label>
+                    <label class="checkbox" for="sunday">Wednesday
+                        <input type="checkbox" name="wednesday" id="wednesday" value="true">
+                    </label>
+                    <label class="checkbox" for="sunday">Thursday
+                        <input type="checkbox" name="thursday" id="thursday" value="true">
+                    </label>
+                    <label class="checkbox" for="sunday">Friday
+                        <input type="checkbox" name="friday" id="friday" value="true">
+                    </label>
+                    <label class="checkbox" for="sunday">Saturday
+                        <input type="checkbox" name="saturday" id="saturday" value="true">
+                    </label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="daily_frequency">Occurs</label>
+
+                <div class="controls">
+                    <select name="daily_frequency" id="daily_frequency">
+                        <option value="1">Once during the day</option>
+                        <option value="2">At regular intervals during the day</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group" id="OnceDailyAtGroup">
+                <label class="control-label label-required" for="daily_at_time">Occurs once at</label>
+
+                <div class="controls">
+                    <input placeholder="HH:MM:SS" type="time" name="daily_at_time" id="daily_at_time" required>
+                </div>
+            </div>
+
+            <div class="control-group" id="DailyEveryXGroup">
+                <label class="control-label" for="daily_every">Every</label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input class="input-mini" type="number" name="daily_every" id="daily_every">
+                        <select name="daily_every_unit" id="daily_every_unit" class="input-small">
+                            <option value="1">Hours</option>
+                            <option value="2">Minutes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!--<h5 class="form_section">Calendar Window</h5>-->
+            <hr>
+            <div class="control-group">
+                <label class="control-label" for="start_date">Date Window</label>
+
+                <div class="controls controls-row">
+                    <input class="span5" placeholder="YYYY-MM-DD" type="date" name="start_date" id="start_date" style="width: 43%">
+                    <div class="span1" style="padding-top: 8px;padding-left: 1px; width:15px">to</div>
+                    <input class="span5" placeholder="YYYY-MM-DD" type="date" name="end_date" id="end_date" style="width: 43%">
+                </div>
+                <div class="controls">
+                <span class="help-block" style="font-size: x-small">Run only between certain dates. Both fields optional.</span>
+                    </div>
+            </div>
+
+            <!--<h5 class="form_section">Time Window</h5>-->
+            <hr>
+            <div class="control-group">
+                <label class="control-label" for="start_time">Time Window</label>
+
+                <div class="controls controls-row">
+                    <input class="span5" placeholder="HH:MM:SS" type="time" name="start_time" id="start_time" style="width: 43%">
+                    <div class="span1" style="padding-top: 8px;padding-left: 1px; width:15px">to</div>
+                    <input class="span5" placeholder="HH:MM:SS" type="time" name="end_time" id="end_time" style="width: 43%">
+                </div>
+                <div class="controls">
+                <span class="help-block" style="font-size: x-small">Run only between certain times of the day. Both fields optional.</span>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+

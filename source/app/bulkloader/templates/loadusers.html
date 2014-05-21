@@ -1,0 +1,64 @@
+<input type="hidden" name="jobType" id="jobType" value="load">
+<input type="hidden" name="jobSubtype" id="jobSubtype" value="loadusers">
+<input type="hidden" name="rootTargetPath" id="rootTargetPath" value="">
+<input type="hidden" name="sourceOption" id="serverSource" value="server">
+
+<div id="switchSource">
+    <div class="control-group" id="serverSelect">
+        <div class="control-group" id="rootSourcePathControlGroup">
+            <label class="control-label label-required" for="rootSourcePath" id="rootSourcePathLabel">Select a CSV
+                File</label>
+
+            <div class="controls">
+                <div class="input-append">
+                    <input class="input-xlarge" name="rootSourcePath" id="rootSourcePath" type="text"
+                           readonly="readonly"
+                           required>
+                    <button class="btn" type="button" id="selectSourcePathButton">Select</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="control-group" id="actionControlGroup">
+    <label class="control-label" for="action">Operation</label>
+
+    <div class="controls">
+        <select name="action" id="action" class="input-xlarge">
+            <option value="createusergroup">Create User/Group</option>
+            <option value="updateusergroup">Update User/Group</option>
+        </select>
+        <span class="help-block" style="font-size: x-small">Operation to perform for each row in the CSV</span>
+    </div>
+</div>
+
+<div class="control-group" id="addMembersControlGroup">
+    <label class="control-label">Group Membership</label>
+
+    <div class="controls">
+        <label for="addMembers" class="checkbox" style="vertical-align: bottom">
+            <input type="checkbox" name="addMembers" id="addMembers" value="true">Add Members
+        </label>
+        <span class="help-block"
+              style="font-size: x-small">Add Group Members from CSV $Members Column</span>
+    </div>
+</div>
+
+<div class="control-group" id="updateMembersControlGroup">
+    <label class="control-label">Update Group Members</label>
+
+    <div class="controls">
+        <label class="radio" style="vertical-align: bottom" id="mergeMembersLabel">
+            <input type="radio" name="updateMemberOption" id="mergeMembers" value="merge" checked>
+            Merge CSV $Members into group
+        </label>
+        <label class="radio">
+            <input type="radio" name="updateMemberOption" id="clearAndAddMembers" value="clearadd">
+            Clear existing group members and add CSV $Members
+        </label>
+        <label class="radio">
+            <input type="radio" name="updateMemberOption" id="doNothing" value="doNothing">
+            Do not add members from CSV
+        </label>
+    </div>
+</div>

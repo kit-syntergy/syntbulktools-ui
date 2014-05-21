@@ -1,0 +1,92 @@
+<fieldset id="nameCollisionFieldset">
+    <div class="control-group" id="docHandlingGroup">
+        <label class="control-label">Name Collisions:</label>
+
+        <div class="controls">
+            <div id="nameCollisonDiv">
+                <h6>Options</h6>
+
+                <div style="font-size: 10px">
+                    <h6>Documents</h6>
+                    <label class="radio addVersionOption">
+                        <input type="radio" name="docOption" id="docAddVersionOption" value="addVersion" checked>
+                        <label class="inline" style="font-size: 11px" for="docAddVersionOption">Add versions to existing
+                            documents</label>
+                    </label>
+                    <label class="radio addVersionOption">
+                        <input type="radio" name="docOption" id="docAddVersionIfNewerOption" value="addVersionIfNewer">
+                        <label class="inline" style="font-size: 11px" for="docAddVersionIfNewerOption">Add versions to
+                            existing
+                            documents only when file date is newer than current
+                            version</label>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="docOption" id="docAppendNum" value="makeUnique">
+                        <label class="inline" style="font-size: 11px" for="docAppendNum">Append a unique integer to the
+                            end of the name--e.g. MyDoc_1</label>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="docOption" id="docReportErrors" value="reportErrors">
+                        <label class="inline" style="font-size: 11px" for="docReportErrors">Do nothing (Name conflict errors will be reported)</label>
+                    </label>
+                    <!--input type="hidden" name="containerOption" id="containerOption" value="updateMetadata"-->
+                    <div id="containerOptionDiv" style="display: none">
+                        <h6>Containers</h6>
+                        <label class="radio updateMetadataOption">
+                            <input type="radio" name="containerOption" id="containerUpdateMetadataOption"
+                                   value="updateMetadata"
+                                   checked>
+                            <label class="inline" style="font-size: 11px" for="containerUpdateMetadataOption">Update
+                                container
+                                with
+                                metadata from CSV (Required with auto create folders)</label>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="containerOption" id="containerAppendNum" value="makeUnique">
+                            <label class="inline" style="font-size: 11px" for="containerAppendNum">Append a unique
+                                integer to the end of the name--e.g. MyFolder_1</label>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="containerOption" id="containerReportErrors" value="reportErrors">
+                            <label class="inline" style="font-size: 11px" for="containerReportErrors">Do nothing (Name conflict errors will be reported)</label>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--div class="control-group" id="containerHandlingGroup">
+        <label class="control-label">Container Name Collision Handling:</label>
+
+        <div class="controls">
+            <div id="containerNameCollisonDiv">
+                <h3>Options</h3>
+
+                <div>
+                    <label class="radio">
+                        <input type="radio" name="containerOption" id="containerUpdateMetadataOption"
+                               value="updateMetadata"
+                               checked>
+                        <label class="inline" style="font-size: 11px" for="containerUpdateMetadataOption">Update
+                            container
+                            with
+                            metadata from CSV</label>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="containerOption" id="containerSuppressErrors" value="suppressErrors">
+                        <label class="inline" style="font-size: 11px" for="containerSuppressErrors">Do nothing and
+                            suppress
+                            errors</label>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="containerOption" id="containerReportErrors" value="reportErrors">
+                        <label class="inline" style="font-size: 11px" for="containerReportErrors">Do nothing but report
+                            name
+                            conflict errors</label>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div-->
+</fieldset>

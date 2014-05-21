@@ -1,0 +1,55 @@
+<span class="help-block" style="font-size: x-small">Required fields labeled in <b>bold</b>. {{help_block}}</span>
+<div class="row-fluid">
+    <div class="span6 form-container">
+        <form class="form-horizontal" id="myform" style="display: none">
+            <input type="hidden" id="newProfileId" name="newProfileId">
+            <label class="control-label" for="profileId">Profile</label>
+
+            <div class="controls" id="profileControls">
+                <div class="input-append">
+                    <select name="profileId" id="profileId" class="span12">
+                        <option value="null" disabled></option>
+                    </select>
+                    <button class="btn btn-info" type="button" id="saveProfileButton" title="Save Profile"><img src=""
+                            class="save-img"></button>
+                    <!--button class="btn btn-info" type="button" id="deleteProfileButton" title="Delete Profile"><i class="icon-remove"></i></button-->
+                </div>
+                <span class="help-block"
+                      style="font-size: x-small">To create a new profile, set desired inputs, type a new name and click save.</span>
+            </div>
+            {{> page_content1}}
+            {{> page_content2}}
+            <div class="control-group" id="whenControlGroup">
+                <label class="control-label" for="nowOption">When?</label>
+
+                <div class="controls">
+                    <label class="radio inline" style="vertical-align: bottom">
+                        <input type="radio" name="whenOption" id="nowOption" value="now" checked>Now (Synchronously)
+                    </label>
+                    <label class="radio inline" style="vertical-align: bottom">
+                        <input type="radio" name="whenOption" id="asyncOption" value="async">Scheduled
+                    </label>
+                </div>
+            </div>
+            <div class="control-group" id="action_buttons_div">
+                <!--label class="control-label" for="action_controls">Action:</label-->
+                <div class="controls" id="action_controls">
+                    {{#each action_buttons}}
+                    <button id="{{id}}" class="{{className}}">{{label}}</button>
+                    {{/each}}
+                    <span class="help-block" style="font-size: x-small">Action Buttons are enabled when you have set values for all required inputs.</span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="span6">
+        <form class="form-horizontal" id="myform_adv" name="myform_adv">
+            {{> page_content3}}
+        </form>
+
+        <form class="form-horizontal" id="schedule_form" name="schedule_form">
+            {{> page_content4}}
+        </form>
+    </div>
+</div>
+

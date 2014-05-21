@@ -1,0 +1,135 @@
+<input type="hidden" name="jobType" id="jobType" value="load">
+<input type="hidden" name="jobSubtype" id="jobSubtype" value="loadcsv">
+<input type="hidden" name="rootTargetPath" id="rootTargetPath" value="">
+<input type="hidden" name="sourceOption" id="serverSource" value="server">
+
+<!--div class="control-group" id="csvSourceDiv">
+    <label class="control-label" for="serverSource">CSV Location</label>
+
+    <div class="controls">
+        <label class="radio inline" style="vertical-align: bottom">
+            <input type="radio" name="sourceOption" id="serverSource" value="server" checked>
+            Server
+        </label>
+        <label class="radio inline">
+            <input type="radio" name="sourceOption" id="desktopSource" value="desktop">
+            Desktop
+        </label>
+    </div>
+</div-->
+<div id="switchSource">
+    <div class="control-group" id="serverSelect">
+        <div class="control-group" id="rootSourcePathControlGroup">
+            <label class="control-label label-required" for="rootSourcePath" id="rootSourcePathLabel">Select a CSV
+                File</label>
+
+            <div class="controls">
+                <div class="input-append">
+                    <input class="input-xlarge" name="rootSourcePath" id="rootSourcePath" type="text"
+                           readonly="readonly"
+                           required>
+                    <button class="btn" type="button" id="selectSourcePathButton">Select</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="control-group" id="desktopSelect" style="display: none">
+        <label class="control-label" for="myfile">Select File from Desktop:</label>
+
+        <div class="controls">
+            <input type="file" id="myfile" name="myfile" required>
+        </div>
+    </div>
+</div>
+<div class="control-group" id="rootFileLocControl">
+    <label class="control-label" for="rootFileLoc">Files Location</label>
+
+    <div class="controls">
+        <select name="rootFileLoc" id="rootFileLoc" class="input-xlarge">
+            <option value="csvpath">Relative to CSV location</option>
+            <option value="absolute">Absolute $SourcePath in CSV</option>
+        </select>
+    </div>
+</div>
+
+<div class="control-group" id="actionControlGroup">
+    <label class="control-label" for="action">Operation
+        <!--span class="help-block" style="font-size: xx-small">Operation to perform for each row in the CSV</span-->
+    </label>
+
+    <div class="controls">
+        <select name="action" id="action" class="input-xlarge">
+            <option value="create">Create Objects</option>
+            <option value="addversion">Add Versions</option>
+            <option value="move">Move Nodes</option>
+            <option value="update">Update Node Metadata</option>
+            <option value="perms">Update Permissions</option>
+        </select>
+    </div>
+</div>
+
+<div class="control-group" id="setPermsControlGroup" style="display: none">
+    <label class="control-label">Permissions</label>
+
+    <div class="controls">
+        <label for="setPerms" class="checkbox" style="vertical-align: bottom">
+            <input type="checkbox" name="setPerms" id="setPerms" value="true">Set permissions from $Permissions Column
+        </label>
+    </div>
+</div>
+
+<div class="control-group" id="addVersionControlGroup">
+    <label class="control-label">Add Version Options</label>
+
+    <div class="controls">
+        <label for="addVerCats" class="checkbox" style="vertical-align: bottom">
+            <input type="checkbox" name="addVerCats" id="addVerCats" value="true">Update Categories
+        </label>
+        <span class="help-block"
+              style="font-size: x-small">Update category data on new version with data from CSV</span>
+    </div>
+</div>
+
+<div class="control-group" id="metadataOptionsControlGroup" style="display: none">
+    <label class="control-label">Metadata Options</label>
+
+    <div class="controls">
+        <div id="metadataOptionsDiv">
+            <h6>Metadata to Set</h6>
+
+            <div style="font-size: 10px" id="updateOptionsSubDiv">
+                <label id="mdDapiLabel" for="mdDapi" class="checkbox" style="vertical-align: bottom">
+                    <input type="checkbox" name="mdDapi" id="mdDapi" value="true">Basic Node Data
+                    <span id="mdDapiHelp" class="help-inline" style="font-size: xx-small">(CreateDate, ModifyDate, CreatedBy, Description, Catalog, Nickname)</span>
+                </label>
+                <label id="mdOwnerLabel" for="mdOwner" class="checkbox" style="vertical-align: bottom">
+                    <input type="checkbox" name="mdOwner" id="mdOwner" value="true">Owner & Owner Group
+                </label>
+                <label id="mdCatsLabel" for="mdCats" class="checkbox"
+                       style="vertical-align: bottom">
+                    <input type="checkbox" name="mdCats" id="mdCats" value="true">Categories
+                </label>
+                <label id="mdClassLabel" for="mdClass" class="checkbox"
+                       style="vertical-align: bottom">
+                    <input type="checkbox" name="mdClass" id="mdClass" value="true">Classifications
+                </label>
+                <label id="mdRmLabel" for="mdRm" class="checkbox" style="vertical-align: bottom">
+                    <input type="checkbox" name="mdRm" id="mdRm" value="true">Records Management Data
+                </label>
+                <label id="mdPoLabel" for="mdPo" class="checkbox" style="vertical-align: bottom">
+                    <input type="checkbox" name="mdPo" id="mdPo" value="true">Physical Object Data
+                </label>
+                <label id="mdNameLabel" for="mdName" class="checkbox" style="vertical-align: bottom">
+                    <input type="checkbox" name="mdName" id="mdName" value="true">Name (Rename)
+                </label>
+            </div>
+        </div>
+        <span class="help-block" style="font-size: x-small">By default, all columns will be applied to the node.  Use these checkboxes to fine-tune.</span>
+    </div>
+</div>
+
+
+
+
+
+
