@@ -54,8 +54,8 @@ module.exports = function(grunt) {
 
                     // Show warnings
                     // logLevel: 2,
-
-                    mainConfigFile: "source/app/config.js",
+                    name: "require-config",
+                    mainConfigFile: "source/app/",
                     out: "dist/tmp/require.js",
                     wrap: false
                 }

@@ -53,7 +53,7 @@ define(["ProcessController"],
             controller.finalizeLoad = function (showSuccess) {
                 var dfd = $.Deferred();
 
-                showSuccess = (typeof showSuccess == "undefined") ? true : false;
+                showSuccess = (typeof showSuccess == "undefined");
                 App.PageController.showLoadingIndicator("Logging Results");
 
                 $.when(App.ServerAPI.finalizeProcess(App.PageController.actionToPerform, App.ProcessController.jobId, this))
@@ -68,7 +68,7 @@ define(["ProcessController"],
                         App.PageController.hideLoadingIndicator();
                         App.PageController.showError(errMsg);
                         dfd.reject(errMsg)
-                    })
+                    });
 
                 return dfd.promise()
             };
@@ -97,7 +97,7 @@ define(["ProcessController"],
             };
 
             controller.loadSuccess = function (result) {
-                var msg = result["msg"] || "Load completed successfully. Results have been logged to the '_audit' folder in the load directory."
+                var msg = result["msg"] || "Load completed successfully. Results have been logged to the '_audit' folder in the load directory.";
                 App.PageController.showSuccess(msg);
                 if (App.PageController.setTargetPath) {
                     App.PageController.setTargetPath(App.PageController.rootTargetId, App.PageController.rootTargetPath);

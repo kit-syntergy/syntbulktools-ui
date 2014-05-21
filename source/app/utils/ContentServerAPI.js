@@ -121,11 +121,6 @@ define(["jquery"],
                 // args is this args = {nodeData: nodeData, action: action, itemNo: itemNo}
                 return privObj.postToLL("syntbt.validateItem", {action: args.action, id: args.id, jobId: jobId}, context);
             },
-            validateCsvFile: function (colNames, action, context) {
-                // args is this : args = {colNames: colNames, , action: action}
-                var colNames = App.OScriptParser.toOScript(args.colNames);
-                return privObj.postToLL("syntbl.validateCsvFile", {colNames: colNames, action: action}, context);
-            },
             finalizeProcess: function (action, jobId, context) {
                 return privObj.postToLL("syntbt.finalizeProcess", {action: action, jobId: jobId}, context);
             },

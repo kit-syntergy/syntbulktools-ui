@@ -83,11 +83,11 @@ define(["jquery", "RootPageController", "jquery-ui", "lodash", "LoadPathModel", 
 
         controller.validateButtonClicked = function () {
             App.ProcessController.runValidation(App.PageController.serializeFormVals());
-        }
+        };
 
         controller.loadButtonClicked = function () {
             App.ProcessController.runLoad(App.PageController.serializeFormVals());
-        }
+        };
 
         controller.hideShowAdvancedOptions = function (action) {
             // *** initially hide all of the items

@@ -104,16 +104,16 @@ define(["jquery", "lodash", "RootPageController", "BulkExporterPageController", 
             $('div.advanced_settings > label.be_' + App.PageController.pageType).show();
 
             // *** initially hide all of the items
-            $('#dataToExportSubDiv > label').hide();
+            $('#dataToExportSubDiv').find('> label').hide();
 
             // *** show the options for this pageType (either "csv" or "structure"
-            $('#dataToExportSubDiv > label.be_' + App.PageController.pageType).show();
+            $('#dataToExportSubDiv').find('> label.be_' + App.PageController.pageType).show();
 
             // *** initially hide all of the items
-            $('#optionsSubDiv > div').hide();
+            $('#optionsSubDiv').find('> div').hide();
 
             // *** show the options for this pageType (either "csv" or "structure"
-            $('#optionsSubDiv > div.be_' + App.PageController.pageType).show();
+            $('#optionsSubDiv').find('> div.be_' + App.PageController.pageType).show();
         };
 
         controller.gridExportDone = function () {

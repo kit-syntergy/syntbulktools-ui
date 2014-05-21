@@ -96,7 +96,7 @@ define(["async", "lodash"],
                     .done(function (result) {
                         clearInterval(intervalId);
                         App.PageController.hideLoadingIndicator();
-                        context.EVAL_LIMIT = result["limit"]
+                        context.EVAL_LIMIT = result["limit"];
                         context.jobId = result["jobId"];
                         context.nodeIdArray = result["nodeIdArray"];
                         context.nodeObjects = result["nodeObjects"];

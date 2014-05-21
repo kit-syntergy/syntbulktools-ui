@@ -16,7 +16,7 @@ define(["jquery", "RootPageController"],
                     e.preventDefault();
                     var selObj = $("#profileId");
                     var existingId = selObj.val();
-                    var optionVal = $("#profileId option:selected").text();
+                    var optionVal = $("#profileId").find("option:selected").text();
                     var newId = $("#newProfileId").val();
                     //log("existingId=" + existingId);
                     //log("newId=" + newId);

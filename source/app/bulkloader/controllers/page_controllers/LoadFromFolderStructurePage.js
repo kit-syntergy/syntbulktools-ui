@@ -167,7 +167,7 @@ define(["jquery", "lodash", "BulkLoaderPageController", "jquery-cookie", "text!t
                     } else {
                         var editor = App.DataTableController.editor;
                         editor.edit(
-                            $("#grid > tbody > tr")[0],
+                            $("#grid").find("> tbody > tr")[0],
                             'View Metadata'/*,
                              { "label": "Update", "fn": function () {
                              editor.submit()
